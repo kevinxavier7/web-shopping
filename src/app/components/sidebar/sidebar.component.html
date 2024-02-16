@@ -1,0 +1,31 @@
+<div class="flex">
+    <div class="w-55 bg-sky-700 h-screen">
+      <div class="h-10  py-2">
+        <h1 class="text-white text-lg font-semibold text-center">APP SHOPING</h1>
+  
+      </div>
+      <div class="p-4">
+        <ul class="mt-4">
+          <li class="flex items-center shadow">
+            <a routerLink="/providers" class="block text-white hover:bg-gray-700 py-2 w-full px-2">
+              <fa-icon [icon]="fauser" class="text-white mx-2"></fa-icon>Proveedores
+            </a>
+          </li>
+          <li class="flex items-center shadow">
+            <a routerLink="/products" class="block text-white hover:bg-gray-700 py-2 w-full px-2">
+              <fa-icon [icon]="fabox" class="text-white mx-2"></fa-icon>Productos
+            </a>
+          </li>
+          <li class="flex items-center shadow">
+            <a routerLink="/shopping" class="block text-white hover:bg-gray-700 py-2 w-full px-2">
+              <fa-icon [icon]="fastore" class="text-white mx-2"></fa-icon>Compras
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+    </div>
+  
+  </div>
+  
+  <router-outlet />

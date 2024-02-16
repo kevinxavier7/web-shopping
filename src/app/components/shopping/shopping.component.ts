@@ -140,7 +140,7 @@ export class ShoppingComponent {
     this.modalEdit=false;
   }
 
-  editShopping(){
+  editShopping(){      
     var datetime:Date;
     var datetime = new Date(this.shoppingEdit.date)
     if(this.providerId==0){      
@@ -153,15 +153,15 @@ export class ShoppingComponent {
       this.shoppingEdit.document,this.shoppingEdit.amount,
       this.shoppingEdit.price, datetime
        ).subscribe({
-        next:()=>{                     
+        next:()=>{                             
         },
         error:(e)=>{
           console.log(e)
         }
-       }) 
-    
-    this.modalEdit = false;
-    this.shoppingservice.reloaded();   
+       })
+    this.getShopping();  
+    this.shoppingservice.reloaded();    
+    this.modalEdit = false;          
   } 
 
   showEdit(e:Event, index:number){
@@ -174,12 +174,15 @@ export class ShoppingComponent {
 
   deleteShopping(event:Event, id:number){     
     this.shoppingservice.deleteShopping(id).subscribe({
-      next:()=>{                
+      next:()=>{                    
       },
       error:(e)=>{
         console.log(e)
       }
-    });     
+    })
+    this.getShopping();  
+    this.shoppingservice.reloaded();
   }  
+  
 
 } 

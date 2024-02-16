@@ -36,19 +36,14 @@ export class ShoppingService {
   }
 
   public editShopping(id:number,providerId:number, productId:number, 
-    document:string, amount:number, price:number, created:Date){ 
-      
-      console.log("productoId:", productId)
-      console.log("provedorId:", providerId)
+    document:string, amount:number, price:number, created:Date){       
       return this.http.put(this.urlshopping +`/${id}`,{
         providerId, productId, document, amount, price, created
       })
-
     }
 
   public deleteShopping(id:number){
     return this.http.delete(this.urlshopping +`/${id}`)
-
   }
   
 }

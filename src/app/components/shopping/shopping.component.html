@@ -42,24 +42,25 @@
                             class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                             Acción</th>
                     </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                    @for (sp of shoppingList; track $index){
-                    <tr>
-                        <td class="px-6 py-4 whitespace-no-wrap">{{sp['id']}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap">{{sp['providerName']}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap">{{sp['productName']}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap">{{sp['productMake']}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap">{{sp['document']}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap">{{sp['amount']}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap">{{sp['price']}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap">{{sp['date']| date:'dd/MM/yyyy'}}</td>
-                        <td class="px-6 py-4 whitespace-no-wrap"> <a href="" (click)="showEdit($event, $index)" routerLink="/shopping"> <fa-icon [icon]="square" class="text-emerald-600 mx-2 fa-lg">
-                        </fa-icon> </a>  <a  (click)="deleteShopping($event, sp['id'])" routerLink="/shopping"> <fa-icon [icon]="trash" class="text-red-700 mx-2 fa-lg ml-2"></fa-icon></a></td>
-                    </tr>
-                    }
-
-                </tbody>
+                </thead>                
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        @for (sp of shoppingList; track $index){
+                        <tr>
+                            <td class="px-6 py-4 whitespace-no-wrap">{{sp['id']}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap">{{sp['providerName']}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap">{{sp['productName']}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap">{{sp['productMake']}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap">{{sp['document']}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap">{{sp['amount']}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap">{{sp['price']}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap">{{sp['date']| date:'dd/MM/yyyy'}}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap"> <a href="" (click)="showEdit($event, $index)"> <fa-icon [icon]="square" class="text-emerald-600 mx-2 fa-lg">
+                            </fa-icon> </a>  <a  (click)="deleteShopping($event, sp['id'])"> <fa-icon [icon]="trash" class="text-red-700 mx-2 fa-lg ml-2"></fa-icon></a></td>
+                        </tr>
+                        }    
+                    </tbody>
+                
+                
             </table>
         </div>
 
